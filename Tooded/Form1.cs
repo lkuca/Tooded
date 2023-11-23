@@ -47,6 +47,41 @@ namespace Tooded
             NaitaKategooria();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text.Trim()!=string.Empty && textBox1.Text.Trim()!=string.Empty && textBox3.Text.Trim()!=string.Empty && comboBox1.SelectedItem != null)
+            {
+                try
+                {
+                    connect.Open();
+                    comand = new SqlCommand("INSERT INTO toode (toodeNimetus, Kogus, Hind, Pilt, Kategooriad) VALUES(@toode, @kogus, @hind, @pilt, @kat)", connect);
+                    comand.Parameters.AddWithValue("@toode", textBox2.Text);
+                    comand.Parameters.AddWithValue("@kogus", textBox1.Text);
+                    comand.Parameters.AddWithValue("@hind", textBox3.Text);
+                    comand.Parameters.AddWithValue("@pilt", textBox2.Text + ".jpg");
+                    comand.Parameters.AddWithValue("@kat", comboBox1.SelectedIndex + 1);
+
+                    comand.ExecuteNonQuery();
+                    connect.Close();
+                    NaitaAndmed();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Andmebaasiga viga!");
+                }
+            }
+        }
+
         public void NaitaAndmed()
         {
             connect.Open();
