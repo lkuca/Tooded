@@ -1,0 +1,13 @@
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\bin\Debug\Tooded.exe.config
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\bin\Debug\Tooded.exe
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\bin\Debug\Tooded.pdb
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\obj\Debug\Tooded.csproj.AssemblyReference.cache
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\obj\Debug\Tooded.csproj.SuggestedBindingRedirects.cache
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\obj\Debug\Tooded.Form1.resources
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\obj\Debug\Tooded.Properties.Resources.resources
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\obj\Debug\Tooded.csproj.GenerateResource.cache
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\obj\Debug\Tooded.csproj.CoreCompileInputs.cache
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\obj\Debug\Tooded.exe
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\obj\Debug\Tooded.pdb
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\bin\Debug\AppData\Toded_log.ldf
+C:\Users\opilane\source\repos\gluhhovtarpv22\Tooded\Tooded\bin\Debug\AppData\Toded.mdf
