@@ -23,7 +23,7 @@ namespace Tooded
             NaitaAndmed();
             NaitaKategooria();
             dataGridView1.SelectionChanged += changepicturerow;
-            
+            button5.Click += Kustuta;
 
         }
         public void NaitaKategooria()
@@ -200,5 +200,71 @@ namespace Tooded
             comboBox1.SelectedItem = dataGridView1.Rows[e.RowIndex].Cells[5].Value;
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(textBox2.Text != "" && textBox3.Text != "" && textBox1.Text != "" && pictureBox1.Image != null)
+            {
+                comand = new SqlCommand("Update toode set ToodeNimetus=@toode,Kogus=@kogus,Hind=@hind, Pilt=@pilt where Id=@id",connect);
+                connect.Open();
+                comand.Parameters.AddWithValue("@id", Id);
+                comand.Parameters.AddWithValue("@toode", textBox3.Text);
+                comand.Parameters.AddWithValue("@kogus", textBox1.Text);
+                comand.Parameters.AddWithValue("@hind", textBox2.Text.Replace(",", "."));
+                string file_pilt = textBox3.Text;
+                comand.Parameters.AddWithValue("@pilt", file_pilt);
+                comand.ExecuteNonQuery();
+                connect.Close();
+                NaitaAndmed();
+
+                MessageBox.Show("Andmed uuendatud");
+            }
+            else
+            {
+                MessageBox.Show("Viga");
+            }
+        }
+
+        private void Kustuta(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0) 
+            {
+
+                DataGridViewRow selectedrow = dataGridView1.SelectedRows[0];
+                int selectedRowID = Convert.ToInt32(selectedrow.Cells["Id"].Value);
+
+                try
+                {
+                    if(connect.State == ConnectionState.Closed)
+                    {
+                        connect.Open();
+                    }
+                    string deleteQuery = "DELETE From toode WHERE Id = @id";
+                    comand = new SqlCommand(deleteQuery, connect);
+                    comand.Parameters.AddWithValue("@id", selectedRowID);
+                    comand.ExecuteNonQuery();
+                    connect.Close();
+
+                    dataGridView1.Rows.Remove(selectedrow);
+                }
+                catch ( Exception ex)
+                {
+                    MessageBox.Show("Problems tekkis kustutamisel: " + ex.Message);
+                }
+                finally
+                {
+                    if (connect.State ==ConnectionState.Open)
+                    {
+                        connect.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vali rida DatagridView kustutamiseks");
+            }
+        }
+
+
+         
     }
 }
