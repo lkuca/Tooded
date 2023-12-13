@@ -9,6 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aspose.Pdf;
+
+using Image = System.Drawing.Image;
+
 
 namespace Tooded
 {
@@ -222,6 +226,12 @@ namespace Tooded
             {
                 MessageBox.Show("Viga");
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
         }
 
         private void Kustuta(object sender, EventArgs e)
